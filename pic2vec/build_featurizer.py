@@ -21,6 +21,7 @@ import keras.backend as K
 
 from .squeezenet import SqueezeNet
 
+# Warning that Theano backend is not functional
 if K.backend() != 'tensorflow':
     logging.warn('Without a tensorflow backend, SqueezeNet and Xception will not be '
                  ' available. Please initialize ImageFeaturizer with either vgg16, vgg19, '
