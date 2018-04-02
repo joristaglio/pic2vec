@@ -453,17 +453,18 @@ class ImageFeaturizer:
         if save_features:
             self.features = features_df
         if save_csv:
-            self.save_csv(omit_model, omit_depth, omit_output, omit_time)
+            self.save_csv(csv_path=csv_path, omit_model=omit_model, omit_depth=omit_depth,
+                          omit_output=omit_output, omit_time=omit_time, save_features=save_features)
 
         # Return the results
         if save_features:
             return full_df, features_df
         return full_df
 
-    def save_csv(self, csv_path=None, omit_model=False, omit_depth=False,
+    def save_csv(self, csv_path="", omit_model=False, omit_depth=False,
                  omit_output=False, omit_time=False, save_features=False):
         # Save the name and extension separately, for robust naming
-        if csv_path is None:
+        if not csv_path:
             csv_path = self.csv_path
         csv_name, ext = os.path.splitext(csv_path)
 
