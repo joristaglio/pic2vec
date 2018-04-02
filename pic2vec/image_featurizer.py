@@ -607,7 +607,7 @@ class ImageFeaturizer:
                     print("Featurizing image batch.")
                 # If this is the first batch, the batch features will be saved alone.
                 # Otherwise, they are concatenated to the last batch
-                x = self.featurize(batch_data, column, True, batch_processing=True)
+                x = self.featurize(batch_data, column, save_features=True, batch_processing=True)
                 logger.warning("Debugging this shiiiiit")
                 logger.warning(x)
                 print(x[0])
